@@ -33,7 +33,7 @@ void Empresa::consultaJogador(string nome, int ID)
 
     for (int i = 0; i < Jogadores.size(); i++)
     {
-            if (Times[i].getJogadorID() == ID|| nome == Times[i].getJogadorNome())
+            if (Jogadores[i].geraID() == ID|| nome ==Jogadores[i].getNome())
             {
                 Times[i].Imprimi();
                // Jogadores[i].imprime();
@@ -51,7 +51,7 @@ void Empresa::consultaJogador(string nome, int ID)
 }
 void Empresa::adicionarTime(string nome)
 {
-    Times.push_back(nome);
+    Times.push_back(Time(nome));
 }
 
 
@@ -60,23 +60,31 @@ void Empresa::listaJogador()
     for (int i = 0; i < Jogadores.size(); i++)
     {
        
-        cout << Times[i].getJogadorNome() <<endl;
+        cout << Jogadores[i].getNome() <<endl;
     }
 }
 
-void Empresa::relatorioFinanceiro(/*string nome*/)
+void Empresa::relatorioFinanceiro()
 {
-    float total,total2, INSS, totalIR;
+    //float total,total2, INSS, totalIR;
 
     for (int i = 0; i < Times.size(); i++)
     {
-        //if (Times[i].getNome() == nome)
-        //{
+        
+           
             Times[i].Imprimi();
-            cout << Times[i].getSalarioTotal() << "- Salario total " << endl;
-            cout << Times[i].getINSS() << "- Total a pagar INSS " << endl;
-            cout << Times[i].getIR() << "- Total a pagar IR " << endl;
-        //}
+            Times[i].getSalarioTotal();
+            Times[i].getINSS();
+            Times[i].getIR();
+            cout << Times.size();
+        
     }
 }
+void Empresa::addJogador(string nome, string nacionalidade, string categoria, float salario_bruto, int dia, int mes, int ano)
+{
+   
+    Jogadores.push_back(Jogador(nome, nacionalidade, categoria, salario_bruto, dia, mes, ano));
+    
+}
+
 

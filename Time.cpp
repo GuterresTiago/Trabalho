@@ -9,6 +9,10 @@ Time::Time(string nome)
 	
 }
 
+void Time::getJogador()
+{
+
+}
 int Time::getID()
 {
 	return ID;
@@ -35,12 +39,17 @@ void Time::adicionaJogador(string nome, string nacionalidade, string categoria, 
 	Jogadores.push_back(Jogador(nome,nacionalidade,categoria,salario_bruto,dia,mes,ano));
 }
 
-string Time::getJogadorNome()
+string Time::getJogadorNome(string nome)
 {
 	
 	for (int i = 0; i < Jogadores.size(); i++)
 	{
-		return Jogadores[i].getNome();
+		if (Jogadores[i].getNome() == nome)
+		{
+			return Jogadores[i].getNome();
+
+		}
+		
 	}
 	
 }
@@ -51,26 +60,31 @@ int Time::getINSS()
 	for (i=0 ; i < Jogadores.size(); i++)
 	{
 		INSS+= Jogadores[i].getINSS();
-		return INSS;
-	}
+		
+	} 
+	cout << INSS << " Custo INSS\n\n";
+	return INSS;
 }
 int Time::getIR()
 {
 	for (int i = 0; i < Jogadores.size(); i++)
 	{
 		INSS += Jogadores[i].getIR();
-		return IR;
+		
 	}
+	cout << IR << " Custo IR\n\n";
+	return IR;
 }
 int Time::getSalarioTotal()
 {
 	int i = 0;
 	for ( i = 0; i < Jogadores.size(); i++)
 	{
-		INSS += Jogadores[i].getSalarioBruto();
-		cout << INSS;
-		return INSS;
+		SalarioTotal += Jogadores[i].getSalarioBruto();
+		
 	}
+	cout << SalarioTotal << "  Salario total\n\n";
+	return INSS;
 }
 
 int Time::getNumeroJogadores()
@@ -80,14 +94,7 @@ int Time::getNumeroJogadores()
 	return  Jogadores.size();
 }
 
-int Time::getJogadorID()
-{
-	for(int i = 0; i < Jogadores.size(); i++)
-	{
-		return Jogadores[i].getID();
-	}
 
-}
 
 void Time::ImprimeTime()
 {
@@ -139,6 +146,6 @@ void Time::geraRelatorioFinanceiro()
 
 int Time::geraID()
 {
-	UltimoID++;
-	return UltimoID;
+	
+	return ++UltimoID;
 }

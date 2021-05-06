@@ -1,21 +1,30 @@
-// Trabalho.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
+/*membors 
+1:Tiago Guterres dos Santos 
+2:Gabriel Moreira
+3:Mauricio Bernardes
+
+*/
 
 #include <iostream>
 #include "Empresa.h"
-#include "Time.h"
-#include "Jogador.h"
+//#include "Time.h"
+//#include "Jogador.h"
 
 int main()
 {
+	Empresa bla("dois irmaos");
+	Empresa ta("fafa");
 
 	
 	Time va("Vasco");
 	Time Ib("Ibis");
-	Empresa bla("dois irmaos");
+	
+	
+	bla.adicionarTime("Vasco");
+	//va.adicionaJogador(bla.addJogador("Alberto", "Brasileiro", "Proficional", 300.00, 15, 5, 1980));
 
-	bla.adicionarTime(Ib.getNome());
-	bla.adicionarTime(va.getNome());
+	
 	va.adicionaJogador("Alberto", "Brasileiro", "Proficional", 300.00, 15, 5, 1980);
 	va.adicionaJogador("Godofredo", "Brasileiro", "Base", 1500.00, 15, 5, 2001);
 	va.adicionaJogador("Tom", "Argentino", "Proficional", 4100.00, 18, 1, 1985);
@@ -24,9 +33,11 @@ int main()
 	va.adicionaJogador("Strarovisc", "Russo", "Base", 800.00, 3, 4, 2003);
 
 
-	va.getSalarioTotal();
-	//bla.adicionarTime("Vasco");
-	//bla.relatorioFinanceiro();
+	//va.getSalarioTotal();
+	
+	bla.relatorioFinanceiro();
+	ta.relatorioFinanceiro();
+	
 
 	//Ib.geraRelatorioFinanceiro();
 	//va.geraRelatorioFinanceiro();

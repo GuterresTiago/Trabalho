@@ -1,6 +1,6 @@
 #include "Jogador.h"
 #pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS
-#include <ctime>
+//#include <ctime>
 #include <iomanip>
  int Jogador::ultimoID =0;
 Jogador::Jogador(string nome,string nacionalidade,string categoria,float salario_bruto,int dia, int mes ,int ano)

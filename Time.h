@@ -4,6 +4,7 @@
 #define Time_h
 #include <iostream>
 #include "Jogador.h"
+
 using namespace std;
 #include <vector>
 
@@ -12,11 +13,10 @@ class Time
 public:
 	Time(string nome);
 	
-
-	string getJogadorNome();
+	void getJogador();
+	string getJogadorNome(string nome);
 	
 
-	int getJogadorID();
 	void setCategoria(string categoria);
 	void setNome(string nome);
 	void adicionaJogador(string nome, string nacionalidade, string categoria, float salario_bruto, int dia, int mes, int ano);

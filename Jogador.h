@@ -6,7 +6,7 @@ using namespace std;
 class Jogador
 {
 public:
-	Jogador();
+	//Jogador();
 	Jogador(string nome, string nacionalidade, string categoria, float salario_bruto, int dia, int mes, int ano);
 
 	void setNome(string nome);
