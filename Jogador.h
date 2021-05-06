@@ -1,11 +1,12 @@
 #pragma once
-
+#ifndef JOGADOR_H
+#define JOGADOR_H
 #include <iostream>
 using namespace std;
 class Jogador
 {
 public:
-	
+	Jogador();
 	Jogador(string nome, string nacionalidade, string categoria, float salario_bruto, int dia, int mes, int ano);
 
 	void setNome(string nome);
@@ -20,6 +21,9 @@ public:
 	void setMes(int mes);
 	void setAno(int ano);
 
+
+	string getCategoria();
+	string getNacionalidade();
 	int getID();
 	string getNome();
 	float getSalarioBruto();
@@ -48,4 +52,5 @@ private:
 	int tempo_restante;
 
 };
+#endif
 

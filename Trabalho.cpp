@@ -18,11 +18,12 @@ int main()
 	bla.adicionarJogador("alfredo");
 	
 	//va.ImprimeTime();
+	va.geraRelatorioFinanceiro();
 
 	//Time a("i");
 	//adicionaJogador("Godofredo", "Brasileiro", "Base", 3000.00, 15, 5, 2001);
 
-	bla.relatorioFinanceiro("Vasco");
+	//bla.relatorioFinanceiro("Vasco");
 
 
 }

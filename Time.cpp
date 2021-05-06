@@ -59,7 +59,7 @@ int Time::getSalarioTotal()
 int Time::getNumeroJogadores()
 {
   
-	cout << Jogadores.size();
+	//cout << Jogadores.size();
 	return  Jogadores.size();
 }
 

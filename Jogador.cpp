@@ -72,6 +72,15 @@ int Jogador::getID()
 {
     return ID;
 }
+string Jogador::getCategoria()
+{
+    return categoria;
+}
+
+string Jogador::getNacionalidade()
+{
+    return nacionalidade;
+}
 
 string Jogador::getNome()
 {
