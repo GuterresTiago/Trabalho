@@ -27,10 +27,12 @@ public:
 	void Imprimi();
 	int getNumeroJogadores();
 	int getSalarioTotal();
+	int getID();
 	int getINSS();
 	int getIR();
 	string getNome();
 	string getCategoria();
+	
 
 private:
 	int ID;

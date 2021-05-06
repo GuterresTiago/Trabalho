@@ -8,6 +8,12 @@ Time::Time(string nome)
 	this->ID = geraID();
 	
 }
+
+int Time::getID()
+{
+	return ID;
+}
+
 void Time::setCategoria(string categoria)
 {
 	this->categoria = categoria;
@@ -41,7 +47,8 @@ string Time::getJogadorNome()
 
 int Time::getINSS()
 {
-	for (int i = 0; i < Jogadores.size(); i++)
+	int i = 0;
+	for (i=0 ; i < Jogadores.size(); i++)
 	{
 		INSS+= Jogadores[i].getINSS();
 		return INSS;
@@ -57,9 +64,11 @@ int Time::getIR()
 }
 int Time::getSalarioTotal()
 {
-	for (int i = 0; i < Jogadores.size(); i++)
+	int i = 0;
+	for ( i = 0; i < Jogadores.size(); i++)
 	{
 		INSS += Jogadores[i].getSalarioBruto();
+		cout << INSS;
 		return INSS;
 	}
 }

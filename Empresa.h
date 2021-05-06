@@ -12,11 +12,11 @@ class Empresa
 public:
     Empresa(string nome);
     
+    int getTime(string nome);
     void adicionarTime(string nome);
-    void adicionarJogador(string nome);
     void consultaJogador(string nome, int ID);
     void listaJogador();
-    void relatorioFinanceiro(string nome);
+    void relatorioFinanceiro(/*string nome*/);
     void setNome(string nome);
 
 private:

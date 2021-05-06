@@ -14,10 +14,22 @@ void Empresa::setNome(string nome)
     this->nome = nome;
 }
 
+int Empresa::getTime(string nome)
+{
+    for (int i = 0; i < Times.size(); i++)
+    {
+        if (Times[i].getNome() == nome)
+        {
+            return Times[i].getID();
+        }
+    }
+}
 
 
 void Empresa::consultaJogador(string nome, int ID)
 {
+
+
 
     for (int i = 0; i < Jogadores.size(); i++)
     {
@@ -42,11 +54,6 @@ void Empresa::adicionarTime(string nome)
     Times.push_back(nome);
 }
 
-void Empresa::adicionaJogador(string nome)
-{
-  
-    
-}
 
 void Empresa::listaJogador()
 {
@@ -57,19 +64,19 @@ void Empresa::listaJogador()
     }
 }
 
-void Empresa::relatorioFinanceiro(string nome)
+void Empresa::relatorioFinanceiro(/*string nome*/)
 {
     float total,total2, INSS, totalIR;
 
     for (int i = 0; i < Times.size(); i++)
     {
-        if (Times[i].getNome() == nome)
-        {
+        //if (Times[i].getNome() == nome)
+        //{
             Times[i].Imprimi();
             cout << Times[i].getSalarioTotal() << "- Salario total " << endl;
             cout << Times[i].getINSS() << "- Total a pagar INSS " << endl;
             cout << Times[i].getIR() << "- Total a pagar IR " << endl;
-        }
+        //}
     }
 }
 
