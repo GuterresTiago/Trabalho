@@ -5,9 +5,10 @@
 #include "Time.h"
 int main()
 {
-	Jogador j;
+	//Jogador j;
 
-	j
+	//j;
 }
 
 
+//(string nome, string nacionalidade, string categoria, float salario_bruto, int dia, int mes, int ano)

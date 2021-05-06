@@ -7,7 +7,6 @@ class Data
 public:
 
     Data() {}; // Construtor Padrão
-    Data(int d, int m, int a); //construtor personalizado
     void toString();
     void setDia(int d);
     void setMes(int m);
