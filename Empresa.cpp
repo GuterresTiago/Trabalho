@@ -71,20 +71,19 @@ void Empresa::relatorioFinanceiro()
     for (int i = 0; i < Times.size(); i++)
     {
         
-           
+        
             Times[i].Imprimi();
             Times[i].getSalarioTotal();
             Times[i].getINSS();
             Times[i].getIR();
-            cout << Times.size();
         
     }
 }
 void Empresa::addJogador(string nome, string nacionalidade, string categoria, float salario_bruto, int dia, int mes, int ano)
 {
    
-    Jogadores.push_back(Jogador(nome, nacionalidade, categoria, salario_bruto, dia, mes, ano));
-    
+           Jogadores.push_back(Jogador(nome, nacionalidade, categoria, salario_bruto, dia, mes, ano));
+ 
 }
 
 

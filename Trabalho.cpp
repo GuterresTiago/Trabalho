@@ -22,7 +22,7 @@ int main()
 	
 	
 	bla.adicionarTime("Vasco");
-	//va.adicionaJogador(bla.addJogador("Alberto", "Brasileiro", "Proficional", 300.00, 15, 5, 1980));
+
 
 	
 	va.adicionaJogador("Alberto", "Brasileiro", "Proficional", 300.00, 15, 5, 1980);
@@ -33,14 +33,14 @@ int main()
 	va.adicionaJogador("Strarovisc", "Russo", "Base", 800.00, 3, 4, 2003);
 
 
-	//va.getSalarioTotal();
+	va.getSalarioTotal();
 	
-	bla.relatorioFinanceiro();
-	ta.relatorioFinanceiro();
+	//bla.relatorioFinanceiro();
+	//ta.relatorioFinanceiro();
 	
 
-	//Ib.geraRelatorioFinanceiro();
-	//va.geraRelatorioFinanceiro();
+	Ib.geraRelatorioFinanceiro();
+	va.geraRelatorioFinanceiro();
 
 	
 
