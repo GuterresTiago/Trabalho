@@ -8,7 +8,15 @@ Time::Time(string nome)
 	this->ID = geraID();
 	
 }
-string Time::setCategoria()
+void Time::setCategoria(string categoria)
+{
+	this->categoria = categoria;
+}
+void Time::setNome(string nome)
+{
+	this->nome = nome;
+}
+string Time::getCategoria()
 {
 	return categoria;
 }
@@ -105,15 +113,17 @@ void Time::geraRelatorioFinanceiro()
 	{
 		if (Jogadores[i].getAposentar() != 0)
 		{
-			cout << "Ativo" << Jogadores[i].getSalarioBruto() << endl;
-			cout << "Ativo" << Jogadores[i].getCalcularSalario() << endl;
+			cout << "Em atividade: " << Jogadores[i].getNome() << endl;
+			cout << "Salario Bruto: " << Jogadores[i].getSalarioBruto() << endl;
+			cout << "Salario Liquido: " << Jogadores[i].getCalcularSalario() << endl;
 		}
 		else if (Jogadores[i].getAposentar() == 0)
 		{
-			cout << "Aposentado" << Jogadores[i].getSalarioBruto() << endl;
-			cout << "Aposentado" << Jogadores[i].getCalcularSalario() << endl;
+			cout << "Aposentado: " << Jogadores[i].getNome() << endl;
+			//cout << "Aposentado: " << Jogadores[i].getSalarioBruto() << endl;
+			//cout << "Aposentado: " << Jogadores[i].getCalcularSalario() << endl;
 		}
-		
+		cout << "\n\n\n";
 	}
 
 }

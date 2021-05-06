@@ -3,7 +3,7 @@
 #define Empresa_h
 #include <iostream>
 #include "Time.h"
-//#include "Jogador.h"
+#include "Jogador.h"
 using namespace std;
 #include <vector>
 
@@ -18,14 +18,10 @@ public:
     void listaJogador();
     void relatorioFinanceiro(string nome);
     void setNome(string nome);
-    int geraID();
 
 private:
-    int  ID;
-    int static UltimoID;
   
     string nome;
-    string categoria;
     vector <Jogador> Jogadores;
     vector <Time> Times;
     float totalSalarios;

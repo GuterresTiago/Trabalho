@@ -1,12 +1,11 @@
 #include "Empresa.h"
 
-int Empresa::UltimoID = 0;
 
 Empresa::Empresa(string nome)
 {
     this->nome = nome;
     
-    this->ID = geraID();
+
    // this->totalSalarios = somaSalarios();
 }
 
@@ -22,40 +21,39 @@ void Empresa::consultaJogador(string nome, int ID)
 
     for (int i = 0; i < Jogadores.size(); i++)
     {
-        if (Jogadores[i].getID() == ID|| Jogadores[i].getNome() == nome)
-        {
-            if (Times[i].getJogadorID() == Jogadores[i].getID()|| Jogadores[i].getNome() == Times[i].getJogadorNome())
+            if (Times[i].getJogadorID() == ID|| nome == Times[i].getJogadorNome())
             {
                 Times[i].Imprimi();
-                Jogadores[i].imprime();
+               // Jogadores[i].imprime();
             }
             else
             {
                 cout << "Jogador sem time" << endl;
-                Jogadores[i].imprime();
+               // Jogadores[i].imprime();
             }
           
-        }
+        
 
     }
 
 }
 void Empresa::adicionarTime(string nome)
 {
-    Times.push_back(Time(nome));
+    Times.push_back(nome);
 }
 
-void Empresa::adicionarJogador(string nome)
+void Empresa::adicionaJogador(string nome)
 {
-    Times.push_back(Time(nome));
+  
+    
 }
 
 void Empresa::listaJogador()
 {
-    for (int i = 0; i < Times.size(); i++)
+    for (int i = 0; i < Jogadores.size(); i++)
     {
-        cout << "test";
-        Times[i].ImprimeTime();
+       
+        cout << Times[i].getJogadorNome() <<endl;
     }
 }
 
@@ -75,8 +73,3 @@ void Empresa::relatorioFinanceiro(string nome)
     }
 }
 
-int Empresa::geraID()
-{
-    UltimoID++;
-    return UltimoID;
-}

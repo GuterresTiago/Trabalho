@@ -1,4 +1,4 @@
-#pragma once
+
 
 #ifndef Time_h
 #define Time_h
@@ -30,7 +30,7 @@ public:
 	int getINSS();
 	int getIR();
 	string getNome();
-	string setCategoria();
+	string getCategoria();
 
 private:
 	int ID;

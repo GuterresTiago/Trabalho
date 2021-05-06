@@ -8,22 +8,24 @@
 
 int main()
 {
-	//Jogador a("Alberto", "Brasileiro", "Proficional", 300.00, 15, 5, 1980);
-	//a.imprime();
+
 	Empresa bla("dois irmaos");
 	Time va("Vasco");
+	Time Ib("Ibis");
 	va.adicionaJogador("Alberto", "Brasileiro", "Proficional", 300.00, 15, 5, 1980);
-	va.adicionaJogador("Godofredo", "Brasileiro", "Base", 3000.00, 15, 5, 2001);
+	va.adicionaJogador("Godofredo", "Brasileiro", "Base", 1500.00, 15, 5, 2001);
+	va.adicionaJogador("Tom", "Argentino", "Proficional", 4100.00, 18, 1, 1985);
+	Ib.adicionaJogador("Dario", "Romeno", "Proficional", 2500.00, 1, 8, 2000);
+	Ib.adicionaJogador("Creuse", "Brasileiro", "Proficional", 300.00, 25, 3, 1995);
+	va.adicionaJogador("Strarovisc", "Russo", "Base", 800.00, 3, 4, 2003);
 	bla.adicionarTime("Vasco");
-	bla.adicionarJogador("alfredo");
+	//bla.adicionarJogador("alberto","Portugues","Base",600.00,7,8,2006);
+	bla.listaJogador();
+
+	//Ib.geraRelatorioFinanceiro();
+	//va.geraRelatorioFinanceiro();
+
 	
-	//va.ImprimeTime();
-	va.geraRelatorioFinanceiro();
-
-	//Time a("i");
-	//adicionaJogador("Godofredo", "Brasileiro", "Base", 3000.00, 15, 5, 2001);
-
-	//bla.relatorioFinanceiro("Vasco");
 
 
 }
