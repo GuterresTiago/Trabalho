@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "Time.h"
+
 int main()
 {
 	//Jogador j;
