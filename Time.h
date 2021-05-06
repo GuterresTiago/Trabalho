@@ -29,9 +29,12 @@ public:
 	int getSalarioTotal();
 	int getINSS();
 	int getIR();
+	string getNome();
+	string setCategoria();
 
 private:
-	int static ID;
+	int ID;
+	int static UltimoID;
 	float SalarioTotal;
 	float INSS;
 	float IR;

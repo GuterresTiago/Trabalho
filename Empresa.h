@@ -3,27 +3,27 @@
 #define Empresa_h
 #include <iostream>
 #include "Time.h"
-#include "Jogador.h"
+//#include "Jogador.h"
 using namespace std;
 #include <vector>
 
 class Empresa
 {
 public:
-    Empresa(string nome, int CNPJ);
+    Empresa(string nome);
     
-    void adicionarTime();
+    void adicionarTime(string nome);
+    void adicionarJogador(string nome);
     void consultaJogador(string nome, int ID);
-    void listaJogador(string nome, int ID);
-    void relatorioFinanceiro(int ID);
+    void listaJogador();
+    void relatorioFinanceiro(string nome);
     void setNome(string nome);
-    void setCNPJ(int CNPJ);
     int geraID();
-    //float somaSalarios();
 
 private:
-    int static ID;
-    int CNPJ;
+    int  ID;
+    int static UltimoID;
+  
     string nome;
     string categoria;
     vector <Jogador> Jogadores;

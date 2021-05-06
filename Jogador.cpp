@@ -1,7 +1,8 @@
 #include "Jogador.h"
 #pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS
 #include <ctime>
- int Jogador::ID=0;
+#include <iomanip>
+ int Jogador::ultimoID =0;
 Jogador::Jogador(string nome,string nacionalidade,string categoria,float salario_bruto,int dia, int mes ,int ano)
 {
 	this->nome = nome;
@@ -9,7 +10,11 @@ Jogador::Jogador(string nome,string nacionalidade,string categoria,float salario
 	this->categoria = categoria;
 	this->salario_bruto = salario_bruto;
 	this->ID = geraID();
+    this->dia = dia;
+    this->mes = mes;
+    this->ano = ano;
     this->salario_liquido= getCalcularSalario();
+    this -> idade = getIdade();
 
 }
 
@@ -25,6 +30,11 @@ void Jogador::setAno(int ano)
 {
     this->ano = ano;
 }
+void Jogador::setIdade(int idade)
+{
+    this->idade = idade;
+}
+
 int Jogador::getDia()
 {
     return dia;
@@ -40,12 +50,10 @@ int Jogador::getAno()
 
 int Jogador::getAposentar()
 {
-    int aux;
-    aux = 60-idade;
-    if (aux > 0)
+    if (idade < 60)
     {
-        cout << "Tempo que falta ate aposentadoria: " << aux << endl;
-        return tempo_restante = aux;
+        cout << "Tempo que falta ate aposentadoria: " << 60-idade << endl;
+        return tempo_restante;
 
     }
     else
@@ -88,7 +96,8 @@ void Jogador::setSalarioBruto(float salario_bruto)
 }
 int Jogador::geraID()
 {
-	return ++ID;
+    ultimoID++;
+	return ultimoID;
 }
 int Jogador::getIdade()
 {
@@ -97,10 +106,11 @@ int Jogador::getIdade()
    
     int total = 0;
     total = 365*(now->tm_year + 1900) + 30*(now->tm_mon + 1) + now->tm_mday - 365*ano - 30*mes - dia;
-
     idade = total / 365;
 
-    return idade;
+    
+
+   return idade;
 }
 void Jogador::imprime()
 {
@@ -110,6 +120,7 @@ void Jogador::imprime()
     cout << ID << " - " << salario_bruto << endl;
     cout << ID << " - " << salario_liquido << endl;
     cout << ID << " - " << ID << endl;
+    cout << ID << " - " << idade << endl;
 
 }
 float Jogador::getSalarioBruto()
@@ -127,39 +138,45 @@ float Jogador::getIR()
 
 float Jogador::getCalcularSalario()
 {
+    int b = salario_bruto,a;
     if (salario_bruto > 0 && salario_bruto <= 1100.00)
     {
-        salario_bruto = salario_bruto * (7.5 / 100);
-        INSS = salario_bruto - salario_liquido;
+        INSS = salario_bruto * (7.5 / 100);
+        salario_liquido = salario_bruto - INSS;
     }
-    else if (salario_bruto > 1100.00 && salario_bruto <= 2000.00)
+
+    if (salario_bruto > 1100.00 && salario_bruto <= 2000.00)
     {
-        salario_liquido = salario_bruto * (9 / 100);
-        INSS = salario_bruto- salario_liquido; 
-        salario_liquido = salario_bruto * (7.5 / 100);
-        IR = salario_bruto - salario_liquido-INSS;
+        INSS = salario_bruto * (9 / 100);
+      
+        IR = salario_bruto * (7.5 / 100);
+        salario_liquido = salario_bruto -INSS-IR;
     }
-    else if (salario_bruto > 2000.00 && salario_bruto <= 3100.00)
+
+    if (salario_bruto > 2000.00 && salario_bruto <= 3100.00)
     {
-        salario_liquido = salario_bruto * (12 / 100);
-        INSS = salario_bruto - salario_liquido;
-        salario_liquido = salario_bruto * (15 / 100);
-        IR = salario_bruto - salario_liquido - INSS;
+        INSS = salario_bruto * (12 / 100);
+   
+        IR = salario_bruto * (15 / 100);
+        salario_liquido = salario_bruto - INSS-IR;
     }
-    else if (salario_bruto > 3100.00 && salario_bruto <= 4100.00)
+
+    if (salario_bruto > 3100.00 && salario_bruto <= 4100.00)
     {
-        salario_liquido = salario_bruto * (14 / 100);
-        INSS = salario_bruto - salario_liquido;
-        salario_liquido = salario_bruto * (22 / 100);
-        IR = salario_bruto - salario_liquido - INSS;
+        INSS = salario_bruto * (14 / 100);
+       
+        IR = salario_bruto * (22 / 100);
+        salario_liquido = salario_bruto - INSS-IR;
     }
-    else if (salario_liquido > 4100.00)
+
+    if (b > 4100.00)
     {
-        salario_liquido = salario_bruto * (14 / 100);
-        INSS = salario_bruto - salario_liquido;
-        salario_liquido = salario_bruto * (27 / 100);
-        IR = salario_bruto - salario_liquido - INSS;
+        INSS = salario_bruto * (14 / 100);
+      
+        IR = salario_bruto * (27 / 100);
+        salario_liquido = salario_bruto - INSS-IR;
     }
+    
     return salario_liquido;
 }
 

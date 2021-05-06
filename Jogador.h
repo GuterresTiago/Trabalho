@@ -27,13 +27,15 @@ public:
 	int getIdade();
 	int getAposentar();
 	float getCalcularSalario();
+	void setIdade(int idade);
 	int geraID();
 	int getDia();
 	int getMes();
 	int getAno();
 
 private:
-	static int ID;
+    int ID;
+	static int ultimoID;
 	int idade;
 	int dia, mes, ano;
 	string nome;

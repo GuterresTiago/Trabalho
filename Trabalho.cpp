@@ -2,12 +2,29 @@
 //
 
 #include <iostream>
+#include "Empresa.h"
+#include "Time.h"
+#include "Jogador.h"
 
 int main()
 {
-	//Jogador j;
+	//Jogador a("Alberto", "Brasileiro", "Proficional", 300.00, 15, 5, 1980);
+	//a.imprime();
+	Empresa bla("dois irmaos");
+	Time va("Vasco");
+	va.adicionaJogador("Alberto", "Brasileiro", "Proficional", 300.00, 15, 5, 1980);
+	va.adicionaJogador("Godofredo", "Brasileiro", "Base", 3000.00, 15, 5, 2001);
+	bla.adicionarTime("Vasco");
+	bla.adicionarJogador("alfredo");
+	
+	//va.ImprimeTime();
 
-	//j;
+	//Time a("i");
+	//adicionaJogador("Godofredo", "Brasileiro", "Base", 3000.00, 15, 5, 2001);
+
+	bla.relatorioFinanceiro("Vasco");
+
+
 }
 
 

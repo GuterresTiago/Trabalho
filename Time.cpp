@@ -1,6 +1,6 @@
 #include "Time.h"
 
-int Time::ID = 0;
+int Time::UltimoID = 0;
 Time::Time(string nome)
 {
 	this->nome = nome;
@@ -8,7 +8,14 @@ Time::Time(string nome)
 	this->ID = geraID();
 	
 }
-
+string Time::setCategoria()
+{
+	return categoria;
+}
+string Time::getNome()
+{
+	return nome;
+}
 void Time::adicionaJogador(string nome, string nacionalidade, string categoria, float salario_bruto, int dia, int mes, int ano)
 {
 	Jogadores.push_back(Jogador(nome,nacionalidade,categoria,salario_bruto,dia,mes,ano));
@@ -51,7 +58,9 @@ int Time::getSalarioTotal()
 
 int Time::getNumeroJogadores()
 {
-	return numeroJogadores = Jogadores.size();
+  
+	cout << Jogadores.size();
+	return  Jogadores.size();
 }
 
 int Time::getJogadorID()
@@ -83,8 +92,8 @@ void Time::geraRelatorioGeral()
 }
 void Time::Imprimi()
 {
-	cout << nome << endl;
-	cout << ID << endl;
+	cout <<ID<< " - "<< nome << endl;
+	
 
 }
 
@@ -111,5 +120,6 @@ void Time::geraRelatorioFinanceiro()
 
 int Time::geraID()
 {
-	return ++ID;
+	UltimoID++;
+	return UltimoID;
 }

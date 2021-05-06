@@ -1,11 +1,11 @@
 #include "Empresa.h"
 
-int Empresa::ID = 0;
+int Empresa::UltimoID = 0;
 
-Empresa::Empresa(string nome, int CNPJ)
+Empresa::Empresa(string nome)
 {
     this->nome = nome;
-    this->CNPJ = CNPJ;
+    
     this->ID = geraID();
    // this->totalSalarios = somaSalarios();
 }
@@ -15,10 +15,7 @@ void Empresa::setNome(string nome)
     this->nome = nome;
 }
 
-void Empresa::setCNPJ(int CNPJ)
-{
-    this->CNPJ = CNPJ;
-}
+
 
 void Empresa::consultaJogador(string nome, int ID)
 {
@@ -43,33 +40,43 @@ void Empresa::consultaJogador(string nome, int ID)
     }
 
 }
-void Empresa::adicionarTime()
+void Empresa::adicionarTime(string nome)
 {
     Times.push_back(Time(nome));
 }
 
-void Empresa::listaJogador(string nome, int ID)
+void Empresa::adicionarJogador(string nome)
 {
-    for (int i = 0; i < Jogadores.size(); i++)
+    Times.push_back(Time(nome));
+}
+
+void Empresa::listaJogador()
+{
+    for (int i = 0; i < Times.size(); i++)
     {
-        Jogadores[i].imprime();
+        cout << "test";
+        Times[i].ImprimeTime();
     }
 }
 
-void Empresa::relatorioFinanceiro(int ID)
+void Empresa::relatorioFinanceiro(string nome)
 {
     float total,total2, INSS, totalIR;
+
     for (int i = 0; i < Times.size(); i++)
     {
-       
-        Times[i].Imprimi();
-        cout << Times[i].getSalarioTotal() << "- Salario total " << endl;
-        cout << Times[i].getINSS() << "- Total a pagar INSS " << endl;
-        cout << Times[i].getIR() << "- Total a pagar IR " << endl;
+        if (Times[i].getNome() == nome)
+        {
+            Times[i].Imprimi();
+            cout << Times[i].getSalarioTotal() << "- Salario total " << endl;
+            cout << Times[i].getINSS() << "- Total a pagar INSS " << endl;
+            cout << Times[i].getIR() << "- Total a pagar IR " << endl;
+        }
     }
 }
 
 int Empresa::geraID()
 {
-    return ++ID;
+    UltimoID++;
+    return UltimoID;
 }
